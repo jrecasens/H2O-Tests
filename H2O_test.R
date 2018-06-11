@@ -1,10 +1,10 @@
 
-#Generate Sample dataset
+# Generate Sample dataset
 dataset <- iris
+
+# Create test factor
 dataset$curlyFactor <- as.factor(paste0("var {",trunc(runif(nrow(dataset), 1, 10)),"}"))
 
-#Drop unused factor levels
-dataset <- droplevels(dataset) 
 
 # To H2O frame
 datasetH2O <- as.h2o(dataset, destination_frame= "datasetH2O")
